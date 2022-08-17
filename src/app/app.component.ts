@@ -17,7 +17,7 @@ class Item{
   selector: 'main-comp',
   template:
     `
-    <main>
+    <main [style.display] = 'isInvisible? "none":"" '>
       <div [class.top] = 'true' class = 'text-base'>Вход</div>
       <div [class.Input]="true" [class.topInput] = 'true'>
       <input type="text" [value] = "login" placeholder="login" class = 'text-xl text-white'>
@@ -27,7 +27,7 @@ class Item{
       </div>
       <button [attr.display]="true" (click)="checkAcc()">Войти</button>
     </main>
-    <footer><p><a >Ещё не зарегистрированы? Создайте аккаунт!</a>
+    <footer [style.display] = 'isInvisible? "none":"" '><p><a (click)="invisChanger()">Ещё не зарегистрированы? Создайте аккаунт!</a>
       <router-outlet></router-outlet>
     </p>
     </footer>
@@ -122,6 +122,12 @@ export class AppComponent {
   login: string ='';
   password: string = '';
 
+  isInvisible: boolean = false
+
+
+  invisChanger(){
+    this.isInvisible = !this.isInvisible
+  }
   checkAcc(){
     // Запрос к серверу
     //
