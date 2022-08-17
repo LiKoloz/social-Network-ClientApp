@@ -1,36 +1,24 @@
 import { Component } from '@angular/core';
 
-class Item{
-  purchase: string;
-  done: boolean;
-  price: number;
-
-  constructor(purchase: string, price: number) {
-
-    this.purchase = purchase;
-    this.price = price;
-    this.done = false;
-  }
-}
 
 @Component({
   selector: 'main-comp',
   template:
-    `
+      `
     <main [style.display] = 'isInvisible? "none":"" '>
       <div [class.top] = 'true' class = 'text-base'>Вход</div>
       <div [class.Input]="true" [class.topInput] = 'true'>
-      <input type="text" [value] = "login" placeholder="login" class = 'text-xl text-white'>
+        <input type="text" [value] = "login" placeholder="login" class = 'text-xl text-white'>
       </div>
       <div [class.Input]="true">
-      <input type="text" [value] = "password" placeholder="password" class = 'text-xl text-white'>
+        <input type="text" [value] = "password" placeholder="password" class = 'text-xl text-white'>
       </div>
       <button [attr.display]="true" (click)="checkAcc()">Войти</button>
     </main>
-    <footer [style.display] = 'isInvisible? "none":"" '><p><a (click)="invisChanger()">Ещё не зарегистрированы? Создайте аккаунт!</a>
-      <router-outlet></router-outlet>
+    <footer [style.display] = 'isInvisible? "none":"" '><p><a (click)="invisChanger()" routerLink = 'registration'>Ещё не зарегистрированы? Создайте аккаунт!</a>
     </p>
     </footer>
+    <router-outlet></router-outlet>
   `,
   styles: [`
     *{
@@ -118,6 +106,7 @@ class Item{
       cursor: pointer;
     }
   `]})
+
 export class AppComponent {
   login: string ='';
   password: string = '';
