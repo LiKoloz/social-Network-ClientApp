@@ -1,0 +1,29 @@
+<main class="w-full h-full ng-blue-300 ">
+  <div class="flex flex-row flex-nowrap justify-center place-items-center">
+    <div class="basis-1/4 "></div>
+    <div class="basis-1/2 text-center">
+      <h2 class="text-5xl header " >Регистрация</h2>
+      <div [class.input]=true>
+        <input type="text" placeholder="Имя" [(ngModel)]="firstName">
+        <input type="text" placeholder="Фамилия" [(ngModel)]='secondName'>
+        <input type="number" placeholder="Возраст" [(ngModel)]='age'>
+        <input type="text" placeholder="Телефон" [(ngModel)]='phone'>
+        <input type="text" placeholder="Email" [(ngModel)]='email'>
+        <input type="text" placeholder="Пароль" [(ngModel)]='password' [style.border]="!isInvisible? 'border: px solid red':'border: 4px solid orangered'">
+        <input type="text" placeholder="Подтвердите пароль" [(ngModel)]='password2'>
+      </div>
+      <div [style.display]="isInvisible? 'none':''"><h2>Пароли не совпадают</h2></div>
+      <button (click)='passwordChecker()'>Зарегистрироваться</button>
+    </div>
+    <div class="basis-1/4 ">
+      <ul>
+        <li>{{firstName}}</li>
+        <li>{{secondName}}</li>
+        <li>{{email}}</li>
+        <li>{{phone}}</li>
+        <li>{{password}}</li>
+        <li>{{password2}}</li>
+      </ul>
+    </div>
+  </div>
+</main>

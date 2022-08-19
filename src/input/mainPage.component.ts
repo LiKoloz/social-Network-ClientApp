@@ -39,7 +39,7 @@ styles: [`
 
 
 
-export class InputComponent {
+export class MainPageComponent {
   login: string ='';
   password: string = '';
 

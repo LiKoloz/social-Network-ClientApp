@@ -2,7 +2,7 @@ import {NgModule} from "@angular/core";
 import {BrowserModule} from "@angular/platform-browser";
 import {FormsModule} from "@angular/forms";
 import {RegistrationComponent} from "./registration.component";
-import {RegistrationService} from "./registration.service";
+import {HttpService} from "../http.service";
 
 @NgModule({
   imports: [
@@ -14,9 +14,6 @@ import {RegistrationService} from "./registration.service";
   ],
   exports: [
     RegistrationComponent
-  ],
-  providers: [
-    RegistrationService
   ],
 })
 
